@@ -22,7 +22,7 @@ You'll need a Linux kernel, but we test the generated userspace using QEMU:
 
 ```bash
 wget https://github.com/charles25565/linux-prebuilds/releases/latest/download/bzImage
-qemu-system-x86_64 -kernel bzImage -initrd userspace.cpio.gz -append "quiet ip=dhcp" -device e1000,netdev=net0 -netdev user,id=net0,hostfwd=tcp::8080-:80 -accel kvm
+qemu-system-x86_64 -kernel bzImage -initrd userspace.cpio.gz -append "quiet ip=dhcp" -device e1000,netdev=net0 -netdev user,id=net0,hostfwd=tcp::8080-:80 -accel none -m 96M
 ```
 
 On `localhost:8080`, you should see your site!
