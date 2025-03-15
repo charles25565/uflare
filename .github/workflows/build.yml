@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build userspace
+        run: ./build-userspace.sh
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: userspace
+          path: |
+            userspace
+            userspace.tar
+            userspace.cpio.gz
