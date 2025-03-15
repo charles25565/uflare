@@ -10,7 +10,7 @@ You'll want to ensure you have a Go compiler, some core utilites, and Bash.
 
 ### Configuration
 
-You may want to review `config` and change the path.
+You may want to review `config.sh` and change the path.
 
 ### Building
 
